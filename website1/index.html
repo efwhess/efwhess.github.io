@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efe Yavuz | Randevu</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Moving Lines Background -->
+    <div class="background-lines"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-letter">E</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Merhaba, Ben <span class="highlight">Efe.</span></h1>
+            <h2 class="hero-subtitle"><span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span></h2>
+        </section>
+
+        <!-- Slider Section -->
+        <section class="slider-section">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Added onerror so if local images are missing, fallbacks are used -->
+                    <div class="swiper-slide"><img src="images/photo1.jpg.jpeg" alt="Fotoğraf 1" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop'"></div>
+                    <div class="swiper-slide"><img src="images/photo2.jpg.jpeg" alt="Fotoğraf 2" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop'"></div>
+                    <div class="swiper-slide"><img src="images/photo3.jpg.jpeg" alt="Fotoğraf 3" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop'"></div>
+                    <div class="swiper-slide"><img src="images/photo4.jpg.jpeg" alt="Fotoğraf 4" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop'"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-section">
+            <h2 class="about-title">Hakkımda</h2>
+            <div class="about-content">
+                <p><strong>İsim:</strong> Hüseyin Efe Yavuz</p>
+                <p><strong>Doğum Tarihi:</strong> 18 Temmuz 2007</p>
+                <p><strong>Burç:</strong> Yengeç</p>
+                <p><strong>Eğitim:</strong> Necmettin Erbakan Üniversitesi</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <a href="mailto:efeyavuz7321@gmail.com"><i class="fas fa-envelope"></i> efeyavuz7321@gmail.com</a>
+            <a href="tel:+905357165527"><i class="fas fa-phone"></i> +90 535 716 55 27</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/efwhess?igsh=bWgwd3hrZ3h5Njlq&amp;utm_source=qr" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/905357165527" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/h%C3%BCseyin-efe-yavuz-3b2663261/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B1RNvL3JaRjCttCNMmoF4RQ%3D%3D" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/efwhe_ss?s=21" target="_blank" class="social-icon">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Fixed Appointment Button -->
+    <button class="fab-button" id="openModalBtn">
+        <i class="fas fa-calendar-check"></i> RANDEVU AL
+    </button>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Randevu Oluştur</h2>
+            <form id="appointmentForm">
+                <div class="input-group">
+                    <label for="fname">İsim</label>
+                    <input type="text" id="fname" name="Isim" required placeholder="Adınız">
+                </div>
+                <div class="input-group">
+                    <label for="lname">Soyisim</label>
+                    <input type="text" id="lname" name="Soyisim" required placeholder="Soyadınız">
+                </div>
+                <div class="input-group">
+                    <label for="age">Yaş</label>
+                    <input type="number" id="age" name="Yaş" required placeholder="Yaşınız">
+                </div>
+                <div class="input-group">
+                    <label for="date">Tarih</label>
+                    <input type="date" id="date" name="Tarih" required>
+                </div>
+                <div class="input-group">
+                    <label for="time">Saat</label>
+                    <input type="time" id="time" name="Saat" required>
+                </div>
+                <div class="input-group">
+                    <label for="note">Notunuz (Maks 100 karakter)</label>
+                    <textarea id="note" name="Not" maxlength="100" rows="2" placeholder="Eklemek istediğiniz not..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Gönder</button>
+            </form>
+            <div id="successMessage" style="display: none; text-align: center; padding: 2rem 0;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; color: #4CAF50; margin-bottom: 1rem;"></i>
+                <h3 style="color: var(--silver-light); font-size: 1.5rem; margin-bottom: 0.5rem;">Teşekkür ederiz :)</h3>
+                <p style="color: var(--text-secondary);">Randevu talebiniz başarıyla e-postaya iletildi.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
